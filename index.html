@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Khaled Hania</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+  <!-- Canvas pour le background animé (neurones) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===== Barre de navigation ===== -->
+  <header>
+    <h1 class="logo">Khaled Hania</h1>
+    <nav>
+      <ul>
+        <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
+        <li><a href="#projects" data-fr="Projets" data-en="Projects">Projets</a></li>
+        <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+        <li><button id="lang-toggle">EN</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Section Accueil ===== -->
+  <section class="hero">
+    <h2 data-fr="Salut, je suis" data-en="Hi, I'm">Salut, je suis</h2>
+    <h1>Khaled Hania</h1>
+    <p data-fr="Étudiante en Master Ingénierie des Données & Technologies Web"
+       data-en="Master’s student in Data Engineering & Web Technologies">
+       Étudiante en Master Ingénierie des Données & Technologies Web
+    </p>
+    <a href="#projects" class="btn" data-fr="Voir mes projets" data-en="View my projects">
+       Voir mes projets
+    </a>
+  </section>
+
+  <!-- ===== À propos ===== -->
+  <section id="about">
+    <h2 data-fr="À propos de moi" data-en="About me">À propos de moi</h2>
+    <p data-fr="Je suis passionnée par le développement web, la data et le design 3D avec Blender. J’aime créer des solutions innovantes à travers la technologie et le design."
+       data-en="I’m passionate about web development, data science, and 3D design with Blender. I love creating innovative solutions through technology and design.">
+       Je suis passionnée par le développement web, la data et le design 3D avec Blender. J’aime créer des solutions innovantes à travers la technologie et le design.
+    </p>
+  </section>
+
+  <!-- ===== Projets ===== -->
+  <section id="projects">
+    <h2 data-fr="Mes Projets" data-en="My Projects">Mes Projets</h2>
+    <div class="projects-container" id="projects-list">
+      <!-- Les projets seront insérés dynamiquement par JS -->
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <h2 data-fr="Contactez-moi" data-en="Contact Me">Contactez-moi</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Nom / Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit" class="btn" data-fr="Envoyer" data-en="Send">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Khaled Hania. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
