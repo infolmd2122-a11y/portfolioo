@@ -138,8 +138,10 @@
   window.__neuronsBg = { restart: start, config: CONFIG };
 })();
 
-// ========== Langue ==========
 
+// ===========================
+// Gestion de la langue
+// ===========================
 const langToggle = document.getElementById("lang-toggle");
 let currentLang = "fr";
 
@@ -152,32 +154,62 @@ langToggle.addEventListener("click", () => {
   });
 });
 
-// ========== Projets dynamiques ==========
+
+// ===========================
+// Projets dynamiques (ACTUALISÉS)
+// ===========================
+
 const projects = [
-  {id:1, title:"Projet Blender 1", desc:"Modélisation 3D et rendu réaliste.", blend:"assets/projects/projet1.blend", report:"assets/projects/rapport1.pdf"},
-  {id:2, title:"Projet Data 2", desc:"Analyse de données et visualisation.", blend:"assets/projects/projet2.blend", report:"assets/projects/rapport2.pdf"}
+  {
+    id: 1,
+    title: "Projet 1",
+    desc: "Modélisation 3D et rendu réaliste (Table)",
+    blend: "assets/projects/projet1.blend",
+    report: "assets/projects/rapport1.pdf",
+    png: "assets/projects/projet1.png"        // <–– ajouté
+  },
+  {
+    id: 2,
+    title: "Projet 2",
+    desc: "Animation 3D (Gelee)",
+    blend: "assets/projects/projet2.blend",
+    report: "assets/projects/rapport2.pdf",
+    video: "assets/projects/projet2.mp4"      // <–– ajouté
+  }
 ];
 
 const projectList = document.getElementById("projects-list");
 projects.forEach(p => {
   const card = document.createElement("div");
   card.classList.add("project-card");
+
   card.innerHTML = `
     <h3>${p.title}</h3>
     <p>${p.desc}</p>
+
     <div class="project-links">
       <a href="${p.blend}" download>Télécharger le modèle (.blend)</a>
       <a href="${p.report}" target="_blank">Voir le rapport (.pdf)</a>
+
+      ${p.png ? `<a href="${p.png}" download>Télécharger le modèle (.png)</a>` : ""}
+      ${p.video ? `<a href="${p.video}" download>Télécharger la vidéo</a>` : ""}
     </div>
   `;
+
   projectList.appendChild(card);
 });
 
-// ========== EmailJS ==========
-(function() { emailjs.init("TON_USER_ID"); })();
+
+// ===========================
+// EmailJS
+// ===========================
+(function() { 
+  emailjs.init("TON_USER_ID"); 
+})();
+
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
-  emailjs.sendForm("TON_SERVICE_ID","TON_TEMPLATE_ID",this)
-    .then(()=>alert("Message envoyé !"))
-    .catch(err=>alert("Erreur : " + JSON.stringify(err)));
+  emailjs.sendForm("TON_SERVICE_ID", "TON_TEMPLATE_ID", this)
+    .then(() => alert("Message envoyé !"))
+    .catch(err => alert("Erreur : " + JSON.stringify(err)));
 });
