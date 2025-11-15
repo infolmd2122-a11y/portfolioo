@@ -165,7 +165,7 @@ const projects = [
     title: "Projet 1",
     desc: "Modélisation 3D et rendu réaliste (Table)",
     blend: "assets/projects/projet1.blend",
-    report: "assets/projects/rappo1.pdf",
+    report: "assets/projects/rapport1.pdf",
     png: "assets/projects/projet1.png"        // <–– ajouté
   },
   {
